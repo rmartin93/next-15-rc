@@ -2,32 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(75, 75, 75);
+  background: rgb(216, 216, 216);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+/* Style the first li in the .ranking-list ul */
+@layer components {
+    ul.ranking-list {
+      /* Give every other li (3rd, 5th, 7th, etc.) a gray background */
+      li:nth-child(odd) {
+        background-color: #fafaff;
+      }
+      li:first-child {
+        font-weight: bold;
+        background-color: #5b5be6;
+        color: white;
+      }
+    }
 }
